@@ -17,7 +17,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "^5.16.2",
+    "@prisma/client": "workspace:*"
+  },
+  "devDependencies": {
     "prisma": "^5.16.2"
   },
   "exports": {
