@@ -1,15 +1,20 @@
-import { WebSocketServer } from 'ws';
+import WebSocket, { WebSocketServer } from 'ws';
 import { GameManager } from './GameManager';
-import url from 'url';
+import { parse } from 'url';
 import { extractAuthUser } from './auth';
+import { IncomingMessage } from 'http';
 
 const wss = new WebSocketServer({ port: 8080 });
 
 const gameManager = new GameManager();
 
-wss.on('connection', function connection(ws, req) {
-  //@ts-ignore
-  const token: string = url.parse(req.url, true).query.token;
+wss.on('connection', function connection(ws: WebSocket, req: IncomingMessage) {
+  if (!req.url) {
+    ws.close(1008, 'URL is required'); // 1008: Policy Violation
+    return;
+  }
+
+  const token = parse(req.url, true).query.token as string;
   const user = extractAuthUser(token, ws);
   gameManager.addUser(user);
 
