@@ -10,5 +10,6 @@
     "strict": true,
     "skipLibCheck": true,
     "baseUrl": "."
-  }
+  },
+  "exclude": ["node_modules"]
 }

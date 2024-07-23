@@ -177,8 +177,8 @@ export class GameManager {
           availableGame = game;
         }
 
-        console.log(availableGame.getPlayer1TimeConsumed());
-        console.log(availableGame.getPlayer2TimeConsumed());
+        // console.log(availableGame.getPlayer1TimeConsumed());
+        // console.log(availableGame.getPlayer2TimeConsumed());
 
         user.socket.send(
           JSON.stringify({

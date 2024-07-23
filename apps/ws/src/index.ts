@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import WebSocket, { WebSocketServer } from 'ws';
 import { GameManager } from './GameManager';
 import { parse } from 'url';

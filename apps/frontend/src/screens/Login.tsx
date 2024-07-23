@@ -8,6 +8,7 @@ const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URL ?? 'http://localhost:30
 const Login = () => {
   const navigate = useNavigate();
   const guestName = useRef<HTMLInputElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setUser] = useRecoilState(userAtom);
 
   const google = () => {

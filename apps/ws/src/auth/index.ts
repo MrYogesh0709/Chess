@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import jwt from 'jsonwebtoken';
 import { User } from '../SocketManager';
 import { WebSocket } from 'ws';

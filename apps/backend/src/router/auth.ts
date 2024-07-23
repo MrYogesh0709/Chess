@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import { Request, Response, Router } from 'express';
 import passport from 'passport';
 import jwt from 'jsonwebtoken';
@@ -26,7 +29,6 @@ interface UserDetails {
 router.post('/guest', async (req: Request, res: Response) => {
   const bodyData = req.body;
   let guestUUID = 'guest-' + uuidv4();
-
   const user = await db.user.create({
     data: {
       username: guestUUID,

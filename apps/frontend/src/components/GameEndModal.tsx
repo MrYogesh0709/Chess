@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import WhiteKing from '../../public/wk.png';
-import BlackKing from '../../public/bk.png';
 import { GameResult, Result } from '@/screens/Game';
 
 interface ModalProps {
@@ -8,6 +6,9 @@ interface ModalProps {
   whitePlayer?: { id: string; name: string };
   gameResult: GameResult;
 }
+
+const WhiteKing = '/wk.png';
+const BlackKing = '/bk.png';
 
 const GameEndModal: React.FC<ModalProps> = ({ blackPlayer, whitePlayer, gameResult }) => {
   const [isOpen, setIsOpen] = useState(true);
